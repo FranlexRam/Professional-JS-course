@@ -25,3 +25,16 @@ function actualizarHora() {
 setInterval(actualizarHora, 1000);
 // Inicializar el reloj al cargar la página
 actualizarHora();
+
+
+// Clase 3.1: TimeRanges, setTimeout , clearTimeout
+let boton = document.querySelector("button").addEventListener("click",desactivarPublicidad);
+let mensaje = setTimeout(saludar,5000);
+
+function saludar() {
+    alert('Gracias por usar nuestro servicio');
+}
+
+function desactivarPublicidad() {
+    clearTimeout(mensaje)
+}
