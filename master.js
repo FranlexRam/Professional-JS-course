@@ -14,4 +14,14 @@ let anio = fechaActual.getFullYear();
 
 fecha.innerHTML=`Fecha: ${dias[diaLetras]} ${dia} de ${meses[mes]} del ${anio}`;
 
-hora.innerHTML=` Hora: ${fechaActual.getHours()}:${fechaActual.getMinutes()}:${fechaActual.getSeconds()}`
+function actualizarHora() {
+    const ahora = new Date();
+    const horas = ahora.getHours().toString().padStart(2, '0');
+    const minutos = ahora.getMinutes().toString().padStart(2, '0');
+    const segundos = ahora.getSeconds().toString().padStart(2, '0')
+    hora.textContent=` Hora: ${horas}:${minutos}:${segundos}`;
+}
+// Actualizar la hora cada segundo
+setInterval(actualizarHora, 1000);
+// Inicializar el reloj al cargar la página
+actualizarHora();
