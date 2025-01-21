@@ -28,13 +28,16 @@ actualizarHora();
 
 
 // Clase 3.1: TimeRanges, setTimeout , clearTimeout
-let boton = document.querySelector("button").addEventListener("click",desactivarPublicidad);
-let mensaje = setTimeout(saludar,5000);
 
-function saludar() {
-    alert('Gracias por usar nuestro servicio');
-}
+// let boton = document.querySelector("button").addEventListener("click",desactivarPublicidad);
+// let mensaje = setTimeout(saludar,5000);
 
-function desactivarPublicidad() {
-    clearTimeout(mensaje)
-}
+// function saludar() {
+//     alert('Gracias por usar nuestro servicio');
+// }
+
+// function desactivarPublicidad() {
+//     clearTimeout(mensaje)
+// }
+
+//Trabajando con OBETOS LITERALES
