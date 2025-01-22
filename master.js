@@ -72,3 +72,28 @@ for(let i=0; i < listadoPeliculas.length; i++) {
     `;
 };
 console.log(listadoPeliculas);
+
+// Trabajando con metodos de los arrays - .forEach()
+let personajesPopulares = [
+    {
+        foto: 'Zendaya.jpg',
+        nombre: 'Zendaya'
+    }, {
+        foto: 'Keanu-Reeves.webp',
+        nombre: 'Keanu Reeves'
+    }, {
+        foto: 'Ursula Corbero.avif',
+        nombre: 'Ursula Corbero'
+    }, {
+        foto: 'robert_downey_jr12.jpg',
+        nombre: 'Robert Downey Jr.'
+    }, {
+        foto: 'Maisie Williams.jpg',
+        nombre: 'Maisie Williams'
+    }, {
+        foto: 'Tom Holland.jpeg',
+        nombre: 'Tom Holland'
+    },
+];
+
+let personajes = document.querySelector("#personajes");
