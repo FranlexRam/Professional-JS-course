@@ -79,7 +79,7 @@ let personajesPopulares = [
         foto: 'Zendaya.jpg',
         nombre: 'Zendaya'
     }, {
-        foto: 'Keanu-Reeves.webp',
+        foto: 'Keanu-Reeves.jpeg',
         nombre: 'Keanu Reeves'
     }, {
         foto: 'Ursula Corbero.avif',
@@ -97,3 +97,12 @@ let personajesPopulares = [
 ];
 
 let personajes = document.querySelector("#personajes");
+
+personajesPopulares.forEach(personaje => {
+    personajes.innerHTML+=`
+        <article class="personaje">
+            <img src="/imagenes/${personaje.foto}" alt="Personaje ">
+            <h3 class="tituloPersonaje">${personaje.nombre}</h3>
+        </article>
+    `
+});

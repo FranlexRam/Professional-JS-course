@@ -20,6 +20,8 @@ ul {
     color: white;
     text-decoration: none;
 }
+
+/* Imagenes Peliculas populares */
 .peliculas {
     display: flex;
     flex-wrap: wrap;
@@ -36,7 +38,39 @@ ul {
     max-width: 100%;
     height: auto;
 }
+
+/* IMAGEN PERSONAJES POPULARES */
+.personajes {
+    background-color: #d0d0d7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.personaje {
+    font-family: 'Roboto';
+    width: 100%;
+    flex: 1;
+    text-align: center;
+    margin: 1rem;
+    padding: 10px;
+}
+
+/* .personaje img {
+    max-width: 100%;
+    height: auto;
+} */
+
+.tituloPersonaje{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+/* IMAGEN PERSONAJES POPULARES */
   
+
+
+
 .fechaHora {
     font-family: 'Roboto';
     font-size: 1.2rem;
