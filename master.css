@@ -21,6 +21,24 @@ ul {
     text-decoration: none;
 }
 
+.tituloPelicula {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.verMas {
+    background-color: #0d6efd;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.verMas:hover {
+    color: #0d6efd;
+    background-color: white;
+    border-radius: #0d6efd solid;
+}
+
 /* Imagenes Peliculas populares */
 .peliculas {
     display: flex;

@@ -106,3 +106,9 @@ personajesPopulares.forEach(personaje => {
         </article>
     `
 });
+
+let agredecimiento = 'Gracias por visitar mi pagina.';
+
+for (const letra of agredecimiento) {
+    console.log(letra);
+}
