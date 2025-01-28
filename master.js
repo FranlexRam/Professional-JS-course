@@ -44,20 +44,28 @@ actualizarHora();
 let peliculas = document.querySelector(".peliculas");
 let listadoPeliculas = [
     {
+        id:1,
         imagen: 'Amelia.jpeg',
         titulo: 'Amélie (2001)' ,
+        genero: 'Accion',
         descripcion: '"Las diferentes viñetas que ilustran este Montmartre y la tierna, conmovedora historia de amor entre Amélie y Nino (Mathieu Kassovitz) son la prueba de que Jeunet reivindica la realidad a través de los sueños. O lo que es lo mismo, nos dice que solo seremos felices si luchamos por convertirlos en realidad. Eso sí, por encima de cualquier moraleja, "Amelie" es, simplemente, un prodigio de inventiva, una absoluta delicia, un regalo para los ojos, una canción de Charles Trénet hecha película".'
     },{
+        id: 2,
         imagen: 'Vertigo.jpg',
         titulo: 'Vértigo (De entre los muertos) (1958)',
+        genero: 'Accion',
         descripcion: '"Una de las obras maestras de su director, en la que supo combinar una intriga construida rigurosamente con un sentido casi fantasmágorico de la narración. Desarrolla un proceso de fascinación que se imbrica por varicuetos casi necrofílicos. Su compleja estructura mezcla sensaciones abstractas y hechos concretos con singular naturalidad, en un conjunto tan sugestivo como susceptible de lecturas múltiples".'
     }, {
+        id: 3,
         imagen: 'Con la muerte en los talones.jpg',
         titulo: 'Con la muerte en los talones (1959)',
+        genero: 'Horror',
         descripcion: '"Uno de los productos más refinados entre los que dirigió Hitchcock, en el que el azar se convierte en motor de una historia elaborada con tanta coherencia como rigor. Su admirable capacidad fabuladora sabe alternar lo fantasioso y lo racional con singular talento. La ironía acaba de redondear los atractivos de esta obra redonda".'
     }, {
+        id: 4,
         imagen: 'cafarnaum.avif',
         titulo: 'Cafarnaúm (2018)',
+        genero: 'Suspenso',
         descripcion: '"La originalidad del planteamiento de la trama, en realidad un macguffn, es esa pregunta incómoda que quien más quien menos se ha hecho alguna vez, ¿por qué tiene tantos hijos quien no puede hacerse cargo de ellos? Es lo que mueve a Zain a denunciar a sus padres por haberle dado la vida".'
     }
 ];
@@ -67,6 +75,7 @@ for(let i=0; i < listadoPeliculas.length; i++) {
                     <img src="/imagenes/${listadoPeliculas[i].imagen}" alt="Pelicula">
                     <h2 class="tituloPelicula">${listadoPeliculas[i].titulo}</h2>
                     <p>${listadoPeliculas[i].descripcion}</p>
+                    <h4><b>Genero: ${listadoPeliculas[i].genero}</b></h4>
                     <button class="verMas">Ver mas</button>
                 </article>
     `;
@@ -113,27 +122,63 @@ for (const letra of agredecimiento) {
     console.log(letra);
 }
 
-//Trabajando con metodos de los ARRAYS: .map()
+//***Trabajando con metodos de los ARRAYS: .map()
 
 let numeros = [10, 20, 30, 40, 50, 60, 70];
 let tripleNumeros = numeros.map((triple)=>triple*3);
 
 
 
-console.log(numeros);
-console.log(tripleNumeros);
+// console.log(numeros);
+// console.log(tripleNumeros);
 
 peliculas.innerHTML='';
 
-//Nuevo ARRAY
-let imagenPeliculas = listadoPeliculas.map(({imagen})=>imagen);
+// //**Nuevo ARRAY con .map()
+//***FORMA CODIGO LARGO:
+// let imagenPeliculas = listadoPeliculas.map(function(pelicula) {
+//     return pelicula.imagen;
+// });
 
-console.log(imagenPeliculas);
+//*** FORMA CODIGO SEMI-CORTO:
+// let imagenPeliculas = listadoPeliculas.map((pelicula)=>pelicula.imagen);
 
-for (const imagen of imagenPeliculas) {
+//*** FORMA CODIGO CORTO:
+// let imagenPeliculas = listadoPeliculas.map(({imagen})=>imagen);
+
+// console.log(imagenPeliculas);
+
+// for (const imagen of imagenPeliculas) {
+//     peliculas.innerHTML+=`
+//         <article class="pelicula">
+//             <img src="/imagenes/${imagen}" alt="Pelicula">
+//         </article>
+//     `
+// }
+
+//*Trabajando con metodos de los ARRAYS: .filter()
+
+//***FORMA CODIGO LARGO:
+// let peliculasPorGenero = listadoPeliculas.filter(function(pelicula) {
+//     return pelicula.genero === 'Accion';
+// })
+
+//*** FORMA CODIGO SEMI-CORTO: 
+// let peliculasPorGenero = listadoPeliculas.filter((pelicula)=>pelicula.genero==='Accion');
+
+//*** FORMA CODIGO CORTO:
+let peliculasPorGenero = listadoPeliculas.filter(({genero})=>genero==='Suspenso');
+
+peliculas.innerHTML='';
+for(let i=0; i < peliculasPorGenero.length; i++) {
     peliculas.innerHTML+=`
-        <article class="pelicula">
-            <img src="/imagenes/${imagen}" alt="Pelicula">
-        </article>
-    `
-}
+                <article class="pelicula">
+                    <img src="/imagenes/${peliculasPorGenero[i].imagen}" alt="Pelicula">
+                    <h2 class="tituloPelicula">${peliculasPorGenero[i].titulo}</h2>
+                    <p>${peliculasPorGenero[i].descripcion}</p>
+                    <h4><b>Genero: ${peliculasPorGenero[i].genero}</b></h4>
+                    <button class="verMas">Ver mas</button>
+                </article>
+    `;
+
+}; 
