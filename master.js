@@ -112,3 +112,28 @@ let agredecimiento = 'Gracias por visitar mi pagina.';
 for (const letra of agredecimiento) {
     console.log(letra);
 }
+
+//Trabajando con metodos de los ARRAYS: .map()
+
+let numeros = [10, 20, 30, 40, 50, 60, 70];
+let tripleNumeros = numeros.map((triple)=>triple*3);
+
+
+
+console.log(numeros);
+console.log(tripleNumeros);
+
+peliculas.innerHTML='';
+
+//Nuevo ARRAY
+let imagenPeliculas = listadoPeliculas.map(({imagen})=>imagen);
+
+console.log(imagenPeliculas);
+
+for (const imagen of imagenPeliculas) {
+    peliculas.innerHTML+=`
+        <article class="pelicula">
+            <img src="/imagenes/${imagen}" alt="Pelicula">
+        </article>
+    `
+}
