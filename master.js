@@ -132,7 +132,7 @@ let tripleNumeros = numeros.map((triple)=>triple*3);
 // console.log(numeros);
 // console.log(tripleNumeros);
 
-peliculas.innerHTML='';
+// peliculas.innerHTML='';
 
 // //**Nuevo ARRAY con .map()
 //***FORMA CODIGO LARGO:
@@ -167,18 +167,46 @@ peliculas.innerHTML='';
 // let peliculasPorGenero = listadoPeliculas.filter((pelicula)=>pelicula.genero==='Accion');
 
 //*** FORMA CODIGO CORTO:
-let peliculasPorGenero = listadoPeliculas.filter(({genero})=>genero==='Suspenso');
+// let peliculasPorGenero = listadoPeliculas.filter(({genero})=>genero==='Accion');
+
+// peliculas.innerHTML='';
+// for(let i=0; i < peliculasPorGenero.length; i++) {
+//     peliculas.innerHTML+=`
+//                 <article class="pelicula">
+//                     <img src="/imagenes/${peliculasPorGenero[i].imagen}" alt="Pelicula">
+//                     <h2 class="tituloPelicula">${peliculasPorGenero[i].titulo}</h2>
+//                     <p>${peliculasPorGenero[i].descripcion}</p>
+//                     <h4><b>Genero: ${peliculasPorGenero[i].genero}</b></h4>
+//                     <button class="verMas">Ver mas</button>
+//                 </article>
+//     `;
+
+// }; 
+
+
+//*Trabajando con metodos de los ARRAYS: .find()
+
+let edades = [10, 29, 40, 31, 25, 15, 12, 27, 32, 35];
+let buscarEdad = edades.find((edad)=>edad>27);
+
+console.log(`Solo califican los que tengan ${buscarEdad} anios!`);
+
+
 
 peliculas.innerHTML='';
-for(let i=0; i < peliculasPorGenero.length; i++) {
-    peliculas.innerHTML+=`
-                <article class="pelicula">
-                    <img src="/imagenes/${peliculasPorGenero[i].imagen}" alt="Pelicula">
-                    <h2 class="tituloPelicula">${peliculasPorGenero[i].titulo}</h2>
-                    <p>${peliculasPorGenero[i].descripcion}</p>
-                    <h4><b>Genero: ${peliculasPorGenero[i].genero}</b></h4>
-                    <button class="verMas">Ver mas</button>
-                </article>
+
+let encontrar = listadoPeliculas.find(({titulo})=>titulo=='Cafarnaúm (2018)');
+
+console.log(encontrar);
+
+peliculas.innerHTML+=
+`
+    <article class="pelicula">
+        <img src="/imagenes/${encontrar.imagen}" alt="Pelicula">
+        <h2 class="tituloPelicula">${encontrar.titulo}</h2>
+        <p>${encontrar.descripcion}</p>
+        <h4><b>Genero: ${encontrar.genero}</b></h4>
+        <button class="verMas">Ver mas</button>
+    </article>
     `;
 
-}; 
