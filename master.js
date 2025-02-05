@@ -193,20 +193,29 @@ console.log(`Solo califican los que tengan ${buscarEdad} anios!`);
 
 
 
-peliculas.innerHTML='';
 
 let encontrar = listadoPeliculas.find(({titulo})=>titulo=='Cafarnaúm (2018)');
 
 console.log(encontrar);
 
-peliculas.innerHTML+=
-`
-    <article class="pelicula">
-        <img src="/imagenes/${encontrar.imagen}" alt="Pelicula">
-        <h2 class="tituloPelicula">${encontrar.titulo}</h2>
-        <p>${encontrar.descripcion}</p>
-        <h4><b>Genero: ${encontrar.genero}</b></h4>
-        <button class="verMas">Ver mas</button>
-    </article>
-    `;
+// peliculas.innerHTML='';
+// peliculas.innerHTML+=
+// `
+//     <article class="pelicula">
+//         <img src="/imagenes/${encontrar.imagen}" alt="Pelicula">
+//         <h2 class="tituloPelicula">${encontrar.titulo}</h2>
+//         <p>${encontrar.descripcion}</p>
+//         <h4><b>Genero: ${encontrar.genero}</b></h4>
+//         <button class="verMas">Ver mas</button>
+//     </article>
+//     `;
 
+//**Trabajando con metodos de los ARRAYS: .reduce()
+
+let calificaciones = [5,3,10,8,7];
+
+let totalCalificaciones = calificaciones.reduce(function(acumulador, nota){
+    return acumulador+nota;
+},0);
+
+console.log(totalCalificaciones);
