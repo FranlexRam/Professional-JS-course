@@ -39,6 +39,16 @@ ul {
     border-radius: #0d6efd solid;
 }
 
+.cantidadPrecio {
+    font-size: 1.2rem;
+    font-family: 'Roboto';
+    margin-top: 10px;
+    background-color: #4d4d4d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
 /* Imagenes Peliculas populares */
 .peliculas {
     display: flex;

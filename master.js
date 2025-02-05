@@ -48,25 +48,29 @@ let listadoPeliculas = [
         imagen: 'Amelia.jpeg',
         titulo: 'Amélie (2001)' ,
         genero: 'Accion',
-        descripcion: '"Las diferentes viñetas que ilustran este Montmartre y la tierna, conmovedora historia de amor entre Amélie y Nino (Mathieu Kassovitz) son la prueba de que Jeunet reivindica la realidad a través de los sueños. O lo que es lo mismo, nos dice que solo seremos felices si luchamos por convertirlos en realidad. Eso sí, por encima de cualquier moraleja, "Amelie" es, simplemente, un prodigio de inventiva, una absoluta delicia, un regalo para los ojos, una canción de Charles Trénet hecha película".'
+        descripcion: '"Las diferentes viñetas que ilustran este Montmartre y la tierna, conmovedora historia de amor entre Amélie y Nino (Mathieu Kassovitz) son la prueba de que Jeunet reivindica la realidad a través de los sueños. O lo que es lo mismo, nos dice que solo seremos felices si luchamos por convertirlos en realidad. Eso sí, por encima de cualquier moraleja, "Amelie" es, simplemente, un prodigio de inventiva, una absoluta delicia, un regalo para los ojos, una canción de Charles Trénet hecha película".',
+        precioAlquiler: 300
     },{
         id: 2,
         imagen: 'Vertigo.jpg',
         titulo: 'Vértigo (De entre los muertos) (1958)',
         genero: 'Accion',
-        descripcion: '"Una de las obras maestras de su director, en la que supo combinar una intriga construida rigurosamente con un sentido casi fantasmágorico de la narración. Desarrolla un proceso de fascinación que se imbrica por varicuetos casi necrofílicos. Su compleja estructura mezcla sensaciones abstractas y hechos concretos con singular naturalidad, en un conjunto tan sugestivo como susceptible de lecturas múltiples".'
+        descripcion: '"Una de las obras maestras de su director, en la que supo combinar una intriga construida rigurosamente con un sentido casi fantasmágorico de la narración. Desarrolla un proceso de fascinación que se imbrica por varicuetos casi necrofílicos. Su compleja estructura mezcla sensaciones abstractas y hechos concretos con singular naturalidad, en un conjunto tan sugestivo como susceptible de lecturas múltiples".',
+        precioAlquiler: 150
     }, {
         id: 3,
         imagen: 'Con la muerte en los talones.jpg',
         titulo: 'Con la muerte en los talones (1959)',
         genero: 'Horror',
-        descripcion: '"Uno de los productos más refinados entre los que dirigió Hitchcock, en el que el azar se convierte en motor de una historia elaborada con tanta coherencia como rigor. Su admirable capacidad fabuladora sabe alternar lo fantasioso y lo racional con singular talento. La ironía acaba de redondear los atractivos de esta obra redonda".'
+        descripcion: '"Uno de los productos más refinados entre los que dirigió Hitchcock, en el que el azar se convierte en motor de una historia elaborada con tanta coherencia como rigor. Su admirable capacidad fabuladora sabe alternar lo fantasioso y lo racional con singular talento. La ironía acaba de redondear los atractivos de esta obra redonda".',
+        precioAlquiler: 270
     }, {
         id: 4,
         imagen: 'cafarnaum.avif',
         titulo: 'Cafarnaúm (2018)',
         genero: 'Suspenso',
-        descripcion: '"La originalidad del planteamiento de la trama, en realidad un macguffn, es esa pregunta incómoda que quien más quien menos se ha hecho alguna vez, ¿por qué tiene tantos hijos quien no puede hacerse cargo de ellos? Es lo que mueve a Zain a denunciar a sus padres por haberle dado la vida".'
+        descripcion: '"La originalidad del planteamiento de la trama, en realidad un macguffn, es esa pregunta incómoda que quien más quien menos se ha hecho alguna vez, ¿por qué tiene tantos hijos quien no puede hacerse cargo de ellos? Es lo que mueve a Zain a denunciar a sus padres por haberle dado la vida".',
+        precioAlquiler: 135
     }
 ];
 for(let i=0; i < listadoPeliculas.length; i++) {
@@ -77,6 +81,7 @@ for(let i=0; i < listadoPeliculas.length; i++) {
                     <p>${listadoPeliculas[i].descripcion}</p>
                     <h4><b>Genero: ${listadoPeliculas[i].genero}</b></h4>
                     <button class="verMas">Ver mas</button>
+                    <p>Precio alquiler: ${listadoPeliculas[i].precioAlquiler}</p>
                 </article>
     `;
 };
@@ -219,3 +224,21 @@ let totalCalificaciones = calificaciones.reduce(function(acumulador, nota){
 },0);
 
 console.log(totalCalificaciones);
+
+//***FORMA CODIGO LARGO:
+// let totalPrecio = listadoPeliculas.reduce(function (acumulador,pelicula) {
+//    return acumulador +  pelicula.precioAlquiler;
+// },0);
+
+//*** FORMA CODIGO CORTO:
+let totalPrecio = listadoPeliculas.reduce((acumulador,pelicula)=>acumulador +  pelicula.precioAlquiler,0);
+
+console.log(totalPrecio);
+
+let cantidadPrecio = document.querySelector('#cantidadPrecio');
+let cantidadPeliculas = listadoPeliculas.length;
+console.log(cantidadPeliculas);
+
+cantidadPrecio.innerHTML=`
+    <h2>Cantidad de peliculas: ${cantidadPeliculas} - Total precio alquiler: $${totalPrecio}</h2>
+`;
